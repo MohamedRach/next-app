@@ -1,6 +1,6 @@
 const GetUser = async (userId: string): Promise<User> => {
     const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
-    if (!res.ok) throw new Error("Invalid User")
+    if (!res.ok) undefined
     return res.json();
 }
  

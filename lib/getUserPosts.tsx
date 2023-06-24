@@ -1,6 +1,6 @@
 const GetUserPosts = async (userId: string): Promise<Post[]> => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts?userId${userId}`)
-    if (!res.ok) throw new Error("Invalid User")
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts?userId${userId}`, {next: {revalidate:60}})
+    if (!res.ok) undefined
     return res.json();
 }
  
